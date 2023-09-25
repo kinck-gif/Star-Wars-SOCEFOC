@@ -1,0 +1,602 @@
+/* Reset de estilos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background-color: #a39f9f; /* Cor de fundo preta */
+    color: #fff; /* Cor do texto branca */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.background-image {
+    position: relative;
+    height: 100vh;
+    background-image: url('Imagens/background.webp'); /* Imagem de fundo do espaço de Star Wars */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+/* Alterações para os botões e ícones */
+.search-button,
+.user-buttons button {
+    background-color: #ffcc00;
+    color: #000;
+}
+
+/* Adicionando gradiente ao fundo */
+.background-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+
+/* Container dos botões */
+.button-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1; /* Defina um valor positivo para os elementos de interface */
+}
+
+/* Estilos para os botões de navegação */
+.navigation {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+.navigation li {
+    margin-right: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #ffcc00;
+}
+
+/* Estilos para a barra de pesquisa */
+.search-bar {
+    margin-right: 20px;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 8px 16px; /* Reduzindo o padding para diminuir o tamanho dos botões */
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #e5b700;
+}
+
+/* Estilos para os botões de Login e Sign Up */
+.user-buttons button {
+    padding: 8px 16px; /* Reduzindo o padding para diminuir o tamanho dos botões */
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.user-buttons button:hover {
+    background-color: #e5b700;
+}
+
+/* Estilos para o texto no centro */
+.center-text {
+    position: absolute;
+    top: 40%; /* Movendo mais para cima (antes estava em 50%) */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #7272a3; /* Azul escuro */
+}
+
+/* Estilos ao título principal */
+.main-text {
+    font-size: 48px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para o logotipo */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    z-index: 1;
+}
+
+/* Estilos para o conteúdo principal */
+.content {
+    position: relative;
+    z-index: 1; /* Coloque o conteúdo principal à frente da imagem de fundo */
+    padding: 20px;
+    text-align: center;
+    color: #fff; /* Cor do texto, ajuste conforme necessário */
+}
+
+.video-carousel {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-frame {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Proporção 16:9 para vídeo responsivo */
+    overflow: hidden;
+    transition: opacity 0.5s; /* Adiciona uma transição de fade de 0.5 segundos */
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Redimensionar o vídeo para preencher o quadro */
+    opacity: 1; /* Defina a opacidade inicial como 1 (totalmente visível) */
+    transition: opacity 0.5s; /* Adiciona uma transição de fade de 0.5 segundos */
+}
+
+.controls {
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente para controles */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.arrow {
+    padding: 10px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #525353; /* Cor das setas */
+    border: none;
+}
+
+/* Estilos para a seção de vídeo */
+.video-title {
+    text-align: center;
+    font-size: 36px;
+    color: #000;
+    margin-top: 40px;
+}
+
+
+.family-section {
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+.family-title {
+    text-align: center;
+    font-size: 36px;
+    color: #000;
+    margin-top: 40px;
+}
+
+.line-family {
+    width: 30px;
+    height: 4px;
+    background-color: #2b2b44;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.couple {
+    display: flex;
+    margin: 10px;
+}
+
+.member {
+    padding: 10px;
+    background-color: #ffcc00;
+    color: #000;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.member:hover {
+    transform: scale(1.1);
+}
+
+.line {
+    width: 4px;
+    background-color: #2b2b44;
+    height: 60px;
+    margin-top: -4px;
+}
+
+.children {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.child {
+    padding: 10px;
+    background-color: #ffcc00;
+    color: #000;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.child:hover {
+    transform: scale(1.1);
+}
+
+.name-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.name-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+}
+
+.icon {
+    margin-bottom: 5px;
+    width: 180px; /* Largura da imagem */
+    height: 180px; /* Altura da imagem */
+}
+
+.name {
+    margin-top: 5px;
+}
+
+/* Estilos para a caixa de palavras */
+.word-box {
+    background-color: #ffcc00; /* Cor de fundo padrão da caixa */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 10px; /* Espaçamento interno */
+    margin: 10px; /* Espaçamento externo */
+    display: none; /* Inicialmente oculto */
+    text-align: center; /* Alinhamento de texto ao centro */
+    font-weight: bold;
+    color: #000; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s; /* Adicione uma transição suave de cor de fundo */
+}
+
+/* Estilos para as caixas ao redor dos nomes */
+.name-box {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 5px;
+}
+
+/* Cores correspondentes aos personagens */
+.name-box.anakin { background-color: #87CEEB; }
+.name-box.padmé { background-color: #FF69B4; }
+.name-box.luke { background-color: #32CD32; }
+.name-box.leia { background-color: #9932CC; }
+.name-box.han { background-color: #FFA500; }
+.name-box.ben { background-color: #7e7d7d; }
+
+.Filmes-artes{
+    text-align: center;
+    font-size: 36px;
+    color: #000;
+    margin-top: 40px;
+}
+
+.content {
+    height: 480px;
+    width: 835px;
+    border-radius: 20px;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -4%);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.content .slide img {
+    height: 100%;
+    width: 100%;
+}
+
+.navigation {
+    bottom: 160px;
+    left: 850px;
+    display: flex;
+}
+
+.bar {
+
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgb(0, 0, 0);
+    margin: 6px;
+    border-radius: 15px;
+    cursor: pointer;
+    transform: translate(580px, 0%);
+    
+}
+
+.bar:hover {
+    background-color: rgb(100, 97, 97);
+}
+
+input {
+  display: none;
+}
+
+.slides {
+    display: flex;
+    width: 500%;
+    height: 100%;
+}
+
+.slide {
+    width: 20%;
+    transition: .6s;
+}
+
+#slide1:checked ~ .s1 {
+    margin-left: 0;
+} 
+
+#slide2:checked ~ .s1 {
+    margin-left: -20%;
+} 
+
+#slide3:checked ~ .s1 {
+    margin-left: -40%;
+} 
+
+#slide4:checked ~ .s1 {
+    margin-left: -60%;
+} 
+
+#slide5:checked ~ .s1 {
+    margin-left: -80%;
+} 
+
+/* Estilos para o rodapé */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0;
+    font-size: 16px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    flex: 1;
+}
+
+.footer-logo img {
+    height: 50px;
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin-right: 20px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.footer-social {
+    flex: 1;
+    text-align: right;
+}
+
+.social-icons .icon-link {
+    font-size: 24px;
+    color: #ffcc00;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons .icon-link:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    .footer-links {
+        display: none;
+    }
+
+    .footer-social {
+        text-align: center;
+    }
+
+    .social-icons .icon-link {
+        margin-left: 10px;
+    }
+    .video-frame {
+        padding-bottom: 75%;
+    }
+}
+
+/* Estilos para telas menores */
+@media screen and (max-width: 576px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .footer-nav li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .footer-social {
+        margin-top: 20px;
+    }
+
+    .social-icons .icon-link {
+        margin-left: 10px;
+    }
+    .navigation{
+        bottom: 10px;
+    }
+}
+.icon-link {
+    margin: 0 10px; /* Espaço entre os ícones */
+}
+
+.icon-link.instagram img {
+    width: 34px; /* Largura desejada */
+    height: 34px; /* Altura desejada */
+}
+
+.icon-link img {
+    width: 24px; /* Largura dos ícones */
+    height: 24px; /* Altura dos ícones */
+}
+
+/* Estilos para o rodapé inferior */
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #fff;
+}
+
+.music-button {
+    background-color: #ffcc00; /* Cor de fundo amarela */
+    color: #000; /* Cor do texto preta */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.music-button:hover {
+    background-color: #e5b700; /* Cor de fundo amarela mais escura ao passar o mouse */
+}
+
+
+html::-webkit-scrollbar {
+    width: 10px;
+}
+html::-webkit-scrollbar-thumb {
+    border-radius: 16px;
+    background: #99999988;
+}
+html::-webkit-scrollbar-thumb:active {
+    background: #999999;
+} 
+
+

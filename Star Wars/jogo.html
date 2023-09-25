@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jogocss.css">
+    <title>Quiz Star Wars</title>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz Star Wars</h1>
+        <div id="question-container">
+            <p id="question"></p>
+        </div>
+        <div id="options-container">
+            <button class="option" onclick="checkAnswer(this)"></button>
+            <button class="option" onclick="checkAnswer(this)"></button>
+            <button class="option" onclick="checkAnswer(this)"></button>
+            <button class="option" onclick="checkAnswer(this)"></button>
+        </div>
+        <p id="result"></p>
+        <button id="next-button" onclick="nextQuestion()">Próxima Pergunta</button>
+    </div>
+
+    <script src="jogojava.js"></script>
+</body>
+</html>
