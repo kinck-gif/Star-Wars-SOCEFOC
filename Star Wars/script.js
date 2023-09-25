@@ -15,6 +15,8 @@ const rightArrow = document.querySelector('.right-arrow');
 
 const videoPaths = [
     'Videos/meme1.mp4',
+    'Videos/meme4.mp4',
+    'Videos/meme5.mp4'
 ];
 
 let currentVideoIndex = 0;
